@@ -1,3 +1,5 @@
+# This code is an adapted version of https://github.com/huggingface/nlp/blob/cab7ff378a37cf212730b3ce039b5e2bd95c9454/datasets/germeval_14/germeval_14.py
+
 
 from __future__ import absolute_import, division, print_function
 
