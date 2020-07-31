@@ -47,7 +47,7 @@ with open("requirements.txt") as requirements_file:
 setup(
     name="nlp_formats",
     #version=VERSION["VERSION"],
-    version="0.0.1",
+    version="0.1.0",
     description=("NLP formats as abstract nlp.GeneratorBasedBuilder implementations for the huggingface/nlp framework"),
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
