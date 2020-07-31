@@ -16,9 +16,9 @@ import os
 
 # version.py defines the VERSION and VERSION_SHORT variables.
 # We use exec here so we don't import allennlp_semparse whilst setting up.
-VERSION = {}
-with open("nlp_formats/version.py") as version_file:
-    exec(version_file.read(), VERSION)
+#VERSION = {}
+#with open("nlp_formats/version.py") as version_file:
+#    exec(version_file.read(), VERSION)
 
 # Load requirements.txt with a special case for allennlp so we can handle
 # cross-library integration testing.
@@ -46,7 +46,8 @@ with open("requirements.txt") as requirements_file:
 
 setup(
     name="nlp_formats",
-    version=VERSION["VERSION"],
+    #version=VERSION["VERSION"],
+    version=0.0.1,
     description=("NLP formats as abstract nlp.GeneratorBasedBuilder implementations for the huggingface/nlp framework"),
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
