@@ -1,7 +1,7 @@
 # nlp-formats
 NLP formats for [huggingface/nlp](https://github.com/huggingface/nlp)
 
-This library intents to separate NLP dataset **formats** from the actual datasets to make them reusable and signifcantly decrease dataset onboarding.
+This library intents to separate NLP dataset formats from the actual datasets to make them reusable and signifcantly decrease dataset onboarding.
 
 ## Available Dataset Formats
 * [Brat](https://brat.nlplab.org/): use `AbstractBrat`
