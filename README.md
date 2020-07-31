@@ -1,5 +1,5 @@
 # nlp-formats
-NLP formats for huggingface/nlp
+NLP formats for [huggingface/nlp](https://github.com/huggingface/nlp)
 
 ## Available Dataset Formats
 * [Brat](https://brat.nlplab.org/)
