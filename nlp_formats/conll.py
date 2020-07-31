@@ -81,11 +81,11 @@ class AbstractConll(nlp.GeneratorBasedBuilder, ABC):
                     yield sentence
             # Don't forget last sentence in dataset 🧐
             yield sentence_counter, {
-                "id": str(sentence_counter),
-                "tokens": current_tokens,
-                "labels": current_labels,
-                "nested-labels": current_nested_labels,
-                "source": current_source,
+                self.config.columns[0]: str(sentence_counter),
+                self.config.columns[1]: current_tokens,
+                self.config.columns[2]: current_labels,
+                self.config.columns[3]: current_nested_labels,
+                self.config.columns[4]: current_source,
             }
 
     @abstractmethod
