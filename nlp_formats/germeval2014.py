@@ -15,15 +15,15 @@ import nlp
 
 
 @dataclass
-class Conll2003GerConfig(nlp.BuilderConfig):
+class Germeval2014Config(nlp.BuilderConfig):
     """BuilderConfig for BRAT."""
   
     columns: List[str] = ["source", "tokens", "labels", "nested-labels"]
 
-class AbstractConll2003Ger(nlp.GeneratorBasedBuilder, ABC):
+class AbstractGermeval2014(nlp.GeneratorBasedBuilder, ABC):
     """GermEval 2014 NER Shared Task dataset format."""
 
-    BUILDER_CONFIG_CLASS = Conll2003GerConfig
+    BUILDER_CONFIG_CLASS = Germeval2014Config
     
     def _info(self):
         return nlp.DatasetInfo(
