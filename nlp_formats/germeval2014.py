@@ -16,9 +16,8 @@ import nlp
 
 @dataclass
 class Germeval2014Config(nlp.BuilderConfig):
-    """BuilderConfig for BRAT."""
-  
-    columns: List[str] = ["source", "tokens", "labels", "nested-labels"]
+    """BuilderConfig for Germeval2014."""
+    pass
 
 class AbstractGermeval2014(nlp.GeneratorBasedBuilder, ABC):
     """GermEval 2014 NER Shared Task dataset format."""
@@ -30,10 +29,10 @@ class AbstractGermeval2014(nlp.GeneratorBasedBuilder, ABC):
             features=nlp.Features(
                 {
                     "id": nlp.Value("string"),
-                    self.config.columns[0]: nlp.Value("string"),
-                    self.config.columns[1]: nlp.Sequence(nlp.Value("string")),
-                    self.config.columns[2]: nlp.Sequence(nlp.Value("string")),
-                    self.config.columns[3]: nlp.Sequence(nlp.Value("string")),
+                    "source": nlp.Value("string"),
+                    "tokens": nlp.Sequence(nlp.Value("string")),
+                    "labels": nlp.Sequence(nlp.Value("string")),
+                    "nested-labels": nlp.Sequence(nlp.Value("string")),
                 }
             )
         )
@@ -68,10 +67,10 @@ class AbstractGermeval2014(nlp.GeneratorBasedBuilder, ABC):
                         sentence_counter,
                         {
                             "id": str(sentence_counter),
-                            self.config.columns[0]: current_tokens,
-                            self.config.columns[1]: current_labels,
-                            self.config.columns[2]: current_nested_labels,
-                            self.config.columns[3]: current_source,
+                            "tokens": current_tokens,
+                            "labels": current_labels,
+                            "nested-labels": current_nested_labels,
+                            "source": current_source,
                         },
                     )
                     sentence_counter += 1
@@ -83,10 +82,10 @@ class AbstractGermeval2014(nlp.GeneratorBasedBuilder, ABC):
             # Don't forget last sentence in dataset 🧐
             yield sentence_counter, {
                 "id": str(sentence_counter),
-                self.config.columns[0]: current_tokens,
-                self.config.columns[1]: current_labels,
-                self.config.columns[2]: current_nested_labels,
-                self.config.columns[3]: current_source,
+                "tokens": current_tokens,
+                "labels": current_labels,
+                "nested-labels": current_nested_labels,
+                "source": current_source,
             }
 
     @abstractmethod
